@@ -6,4 +6,9 @@ To build and install FastCGI developer kit do the following from the command lin
 
 ```
 $ git clone https://github.com/FastCGI-Archives/fcgi2
+$ cd fcgi2/
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
 ```
