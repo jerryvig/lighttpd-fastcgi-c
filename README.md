@@ -17,4 +17,20 @@ After installing the FastCGI developer kit (fcgi2), you should then be able to b
 ```
 $ gcc hello_fastcgi.c -o hello_fastcgi.fcgi -lfcgi -O3 -Wall -Wextra -pedantic -std=c11
 ```
+The key configuration of the FastCGI server is at the end of this `lightttpd.conf` file. The line `"bin-path" => "hello_fastcgi.fcgi"` tells lighttpd to launch a persistent background FastCGI process for the `hello_fastcgi.fcgi` application. The line `"socket" => "/tmp/hello_fastcgi.sock"` tells lighttpd to communicate with background proc(s) via unix socket(s).
+```
+fastcgi.debug = 1
+fastcgi.server = (
+  "/hello" => ((
+    "bin-path" => "hello_fastcgi.fcgi",
+    "socket" => "/tmp/hello_fastcgi.sock",
+    "check-local" => "disable",
+    "max-procs" => 2,
+  ))
+)
+```
+After building the C application with gcc, you should now be able to run the `hello_fastcgi.fcgi` FastCGI application with lighttpd as the http web front end of your application.
+```
+$ lighttpd -D -f lighttpd.conf
+```
 
