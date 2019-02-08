@@ -29,7 +29,7 @@ fastcgi.server = (
   ))
 )
 ```
-After building the C application with gcc, you should now be able to run the `hello_fastcgi.fcgi` FastCGI application with lighttpd as the http web front end of your application, and navigate to <http://localhost:8080/hello> to see the output of your FastCGI application.
+After building the FastGCI C application with gcc, you should now be able to run `hello_fastcgi.fcgi` with lighttpd as the http web front end. You can then navigate to <http://localhost:8080/hello> to see the output of your FastCGI application.
 ```
 $ lighttpd -D -f lighttpd.conf
 ```
