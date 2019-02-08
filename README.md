@@ -15,5 +15,6 @@ $ sudo make install
 After installing the FastCGI developer kit (fcgi2), you should then be able to build the C application with:
 
 ```
-gcc hello_fastcgi.c -o hello_fastcgi.fcgi -lfcgi -Wall -Wextra -pedantic -std=c11
+$ gcc hello_fastcgi.c -o hello_fastcgi.fcgi -lfcgi -O3 -Wall -Wextra -pedantic -std=c11
 ```
+
