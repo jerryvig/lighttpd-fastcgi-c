@@ -1,4 +1,4 @@
-This is a minimal example for how to build FastCGI programs written in C with gcc, and run them with the lighttpd ("lighty") general purpose web server.
+This is a minimal example for how to build FastCGI apps written in C with gcc, and run those C apps with the lighttpd ("lighty") general purpose web server.
 
 This example was built with lighttpd-1.4.x (<https://github.com/lighttpd/lighttpd1.4>). To run this example you will need to ensure that lightttpd's `mod_fastcgi` is enabled. It is enabled by default with the standard lighttpd distribution. You'll also need the FastCGI developer kit fcgi2 (<https://github.com/FastCGI-Archives/fcgi2>) installed on your system.
 
