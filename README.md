@@ -17,7 +17,7 @@ After installing the FastCGI developer kit (fcgi2), you should then be able to b
 ```
 $ gcc hello_fastcgi.c -o hello_fastcgi.fcgi -lfcgi -O3 -Wall -Wextra -pedantic -std=c11
 ```
-The key configuration of the FastCGI server is at the end of this `lightttpd.conf` file. The line `"bin-path" => "hello_fastcgi.fcgi"` tells lighttpd to launch a persistent background FastCGI process for the `hello_fastcgi.fcgi` application. The line `"socket" => "/tmp/hello_fastcgi.sock"` tells lighttpd to communicate with background proc(s) via unix socket(s). lighttpd can also communicate with FastCGI apps via TCP. See the lighttpd modfastcgi documentation at <https://redmine.lighttpd.net/projects/lighttpd/wiki/docs_modfastcgi> for more examples and further explanation.
+The key configuration of the FastCGI server is at the end of this `lightttpd.conf` file. The line `"bin-path" => "hello_fastcgi.fcgi"` tells lighttpd to launch a persistent background FastCGI process for the `hello_fastcgi.fcgi` application. The line `"socket" => "/tmp/hello_fastcgi.sock"` tells lighttpd to communicate with the background proc(s) via unix socket(s). lighttpd can also communicate with FastCGI apps via TCP. See the lighttpd modfastcgi documentation at <https://redmine.lighttpd.net/projects/lighttpd/wiki/docs_modfastcgi> for more examples and further explanation.
 ```
 fastcgi.debug = 1
 fastcgi.server = (
